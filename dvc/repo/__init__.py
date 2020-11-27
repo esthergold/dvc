@@ -144,6 +144,7 @@ class Repo:
         from dvc.data_cloud import DataCloud
         from dvc.lock import LockNoop, make_lock
         from dvc.repo.experiments import Experiments
+        from dvc.repo.logs import Logs
         from dvc.repo.metrics import Metrics
         from dvc.repo.params import Params
         from dvc.repo.plots import Plots
@@ -198,6 +199,7 @@ class Repo:
         self.metrics = Metrics(self)
         self.plots = Plots(self)
         self.params = Params(self)
+        self.logs = Logs(self)
         self._lock_depth = 0
 
     @cached_property
